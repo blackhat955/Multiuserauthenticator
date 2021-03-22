@@ -22,9 +22,9 @@ router.get('/:_id',auth,validate,async(req,res)=>{
     });
 });
 
-//Admin as User try to log in-----------------------------------------------------------------
+//Admin as User try to log in no need to given the input in body only token needed-----------------------------------------------------------------
 
-router.post('/',auth,validate,async(req, res)=>{
+router.post('/admin',auth,validate,async(req, res)=>{
 const{error}=validateUserasAuth(req.user);
 if(error)return res.status(400).send('Not enter the valid email/Id');
 const userdb=await Customer.findOne({_id:req.user._id});

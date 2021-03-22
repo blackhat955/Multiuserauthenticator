@@ -16,7 +16,10 @@ const User=mongoose.model('User',new mongoose.Schema({
     password:String,
     SecurityQuestion:String,
     SecurityAns:String,
-    isAdmin:Boolean,
+    isAdmin:{
+        type:Boolean,
+        default:false
+    },
     adminTokenAfterLogin:String
 }));
 function validateUser({name,email,password}){
