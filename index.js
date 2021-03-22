@@ -16,6 +16,20 @@ useFindAndModify:false
     console.error('FATAL ERROR:jwtPrivateKey is missing');
     process.exit(1);
 }
+app.get('/',async(req,res)=>{
+    res.send([{Info:"welcome to api Information page", },
+     { "/api/register":"register User and admin with different privilage admin need to admin password for register"},
+{"/api/login":"admin log using only through token and normal user need to send req.body having userId and password"},
+{"/api/register":"register User and admin with different privilage admin need to admin password for register"},
+{"modification":"update and delete the user done by admin only route are protected"},
+{"/api/login/admin":"for admin"},
+{"/api/login/normal":"normal user"},
+{"/api/register/admin":"nee password for register as admin"},
+{"/api/register/normal":"register as normal user"},
+{"put request at .api/register/":"requset to pass req.body.isAdmin"},
+{"delete /api/register/id":"pass id as parameter"},
+{"the screenshot of testing of api are attach my github respository":"pls have a look"}])
+});
 app.use('/api/register',register);
 app.use('/api/login',login);
 winston.handleExceptions( 

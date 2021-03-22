@@ -4,11 +4,12 @@
   "description": "\"Creating basic api for CRUD opration and  some basic task\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/blackhat955/internship_task_project.git"
+    "url": "git@github.com:blackhat955/internship_task_project.git"
   },
   "author": "Durgesh Tiwari",
   "license": "ISC",
