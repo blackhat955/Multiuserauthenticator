@@ -1,7 +1,7 @@
-# REST api related authentication and authorization while user try to login or signup any specific application
+# REST api related to authentication and authorization while user try to login or signup any specific application
 
 ### About:
-- This API  help developer how to secure diffrent api point so that any anonymous user may not take advantage of these weakness causes flood your database with 
+- This API  help developer how to secure different api point so that any anonymous user may not take advantage of these weakness causes flood your database with 
  invalid request  or query something which lead to be access of your database and he/she able to see the confidential information which is related  to user 
  and deminish  the image of the organization . 
 
