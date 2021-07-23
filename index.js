@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-const express=require('express');
+const express =require('express');
 const winston=require('winston');
 const register=require('./router/registrationRouter'); 
 const login=require('./router/login')
