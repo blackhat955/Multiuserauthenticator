@@ -16,6 +16,7 @@ useFindAndModify:false
     console.error('FATAL ERROR:jwtPrivateKey is missing');
     process.exit(1);
 }
+const githubLink='https://github.com/blackhat955/internship_task_project_new';
 app.get('/',async(req,res)=>{
     res.send([{Info:"welcome to api Information page", },
      { "/api/register":"register User and admin with different privilage admin need to admin password for register"},
@@ -28,7 +29,8 @@ app.get('/',async(req,res)=>{
 {"/api/register/normal":"register as normal user"},
 {"put request at .api/register/":"requset to pass req.body.isAdmin"},
 {"delete /api/register/id":"pass id as parameter"},
-{"the screenshot of testing of api are attach my github respository":"pls have a look"}])
+{"the screenshot of testing of api are attach my github respository":"pls have a look"},
+{githubLink}])
 });
 app.use('/api/register',register);
 app.use('/api/login',login);
