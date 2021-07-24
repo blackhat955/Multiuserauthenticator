@@ -1,7 +1,7 @@
 // const mongoose = require('mongoose');
 const config = require('config');
 const jwt=require('jsonwebtoken');
-const Joi=require('Joi');
+const Joi=require('joi');
 const _=require('lodash');
 const Bcryptjs=require('bcryptjs');
 const auth=require('../middleware/authentication');
