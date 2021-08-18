@@ -6,7 +6,7 @@ const login=require('./router/login')
 const config=require('config');
 const app=express();
 app.use(express.json())
-mongoose.connect('mongodb+srv://reddevil98:Anilrup@123@cluster0.ppilq.mongodb.net/maltiuserauthentication?retryWrites=true&w=majority/Intership_task_project',{useNewUrlParser:true,
+mongoose.connect('mongodb+srv://reddevil98:Anilrup@123@cluster0.ppilq.mongodb.net/maltiuserauthentication?retryWrites=true&w=majority',{useNewUrlParser:true,
 useUnifiedTopology:true,
 useFindAndModify:false
 })
