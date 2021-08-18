@@ -29,6 +29,8 @@ app.get('/',async(req,res)=>{
 {"/api/register/normal":"register as normal user"},
 {"put request at .api/register/":"requset to pass req.body.isAdmin"},
 {"delete /api/register/id":"pass id as parameter"},
+{"see one demo collection"},
+{https://multiuserauthencator.herokuapp.com/api/register},
 {"the screenshot of testing of api are attach my github respository":"pls have a look"},
 {githubLink}])
 });
