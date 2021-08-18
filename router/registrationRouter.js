@@ -12,6 +12,11 @@ const router=express.Router();
 router.get('/:id',async(req,res)=>{
     const customer=await Customer.findById(req.params.id).select(['-password','-securans','-isAdmin','-adminTokenAfterLogin','-SecurityAns']);
      return res.send(customer);
+}); 
+
+router.get('/',async(req,res)=>{
+    const customer=await Customer.findOne().select(['-password','-securans','-isAdmin','-adminTokenAfterLogin','-SecurityAns']);
+     return res.send(customer);
 });
 
 //this is protect only admin with valid password will register
