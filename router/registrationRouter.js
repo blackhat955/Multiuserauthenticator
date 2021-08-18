@@ -15,7 +15,7 @@ router.get('/:id',async(req,res)=>{
 }); 
 
 router.get('/',async(req,res)=>{
-    const customer=await Customer.findOne().select(['-password','-securans','-isAdmin','-adminTokenAfterLogin','-SecurityAns']);
+    const customer=await Customer.find().select(['-password','-securans','-isAdmin','-adminTokenAfterLogin','-SecurityAns']);
      return res.send(customer);
 });
 
