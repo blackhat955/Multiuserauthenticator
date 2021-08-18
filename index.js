@@ -30,9 +30,7 @@ app.get('/',async(req,res)=>{
 {"put request at .api/register/":"requset to pass req.body.isAdmin"},
 {"delete /api/register/id":"pass id as parameter"},
 {"the screenshot of testing of api are attach my github respository":"pls have a look"},
-{githubLink},
-{"this is one example of collections"},
-{https://multiuserauthencator.herokuapp.com/api/register}])
+{githubLink}])
 });
 app.use('/api/register',register);
 app.use('/api/login',login);
