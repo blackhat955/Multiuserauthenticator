@@ -1,4 +1,4 @@
-# REST api related to authentication and authorization while user try to login or signup any specific application
+# REST API and NPM Library that provides security for user authentication and authorization when a user tries to log in or SignUp
 
 ### About:
 - This API is intended to provide solutions for user authentication and authorization. The developer has been spending hours designing and developing secure channels for the transaction, but this package enables them to reduce their effort by 40 to 50% and make the overall process more efficient than ever before. They will be able to use this package directly in their program as well as they are also able to do changes according to their need.
