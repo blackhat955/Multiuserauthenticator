@@ -1,9 +1,7 @@
 # REST api related to authentication and authorization while user try to login or signup any specific application
 
 ### About:
-- This API  help developer how to secure different api point so that any anonymous user may not take advantage of these weakness causes flood your database with 
- invalid request  or query something which lead to be access of your database and he/she able to see the confidential information which is related  to user 
- and deminish  the image of the organization . 
+- This API is intended to provide solutions for user authentication and authorization. The developer has been spending hours designing and developing secure channels for the transaction, but this package enables them to reduce their effort by 40 to 50% and make the overall process more efficient than ever before. They will be able to use this package directly in their program as well as they are also able to do changes according to their need.
 
 <br><br>
 
