@@ -7,6 +7,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - index.js  # Trigger only on changes to index.js
   release:
     types: [created]  # Trigger when a new release is created
 
