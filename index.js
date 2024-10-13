@@ -19,7 +19,7 @@ useFindAndModify:false
 const githubLink='https://github.com/blackhat955/internship_task_project_new';
 app.get('/',async(req,res)=>{
     res.send([{Info:"welcome to API Information page", },
-     { "/api/register":"register User and admin with  differennt privilege admin need to admin password for register"},
+     { "/api/register":"register User and admin with  different privilege admin need to admin password for register"},
 {"/api/login":"admin log using only through token and normal user need to send req.body having userId and password"},
 {"/api/register":"register User and admin with different privilege admin need to admin password for register"},
 {"modification":"update and delete the user done by admin only route are protected"},
