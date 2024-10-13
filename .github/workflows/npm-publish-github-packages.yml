@@ -1,4 +1,4 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# This workflow will run and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
 name: Node.js Package
@@ -25,10 +25,8 @@ jobs:
           node-version: 16
         
       - name: Install dependencies
-        run: npm ci  # Uncomment this if you want to install dependencies before testing
-      
-       # Uncomment this to run tests before publishing
-      
+        run: npm install  # Install based on package.json
+
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
@@ -43,7 +41,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
         
       - name: Install dependencies
-        run: npm ci
+        run: npm install  # Install based on package.json
         
       - name: Publish package
         run: npm publish
