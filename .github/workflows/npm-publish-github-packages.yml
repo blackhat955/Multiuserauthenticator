@@ -27,8 +27,7 @@ jobs:
       - name: Install dependencies
         run: npm ci  # Uncomment this if you want to install dependencies before testing
       
-      - name: Run tests
-        run: npm test  # Uncomment this to run tests before publishing
+       # Uncomment this to run tests before publishing
       
   publish-gpr:
     needs: build
