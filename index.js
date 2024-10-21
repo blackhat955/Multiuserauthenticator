@@ -22,7 +22,7 @@ app.get('/',async(req,res)=>{
      { "/api/register":"Register User and admin with  different privilege admin need to admin password for register"},
 {"/api/login": "admin log using only through token and normal user need to send req.body having userId and password"},
 {"/api/register":"Register User and admin with different privilege admin need to admin password for register"},
-{"modification":"update and delete the user done by admin only route are protected"},
+{"modification": "update and delete the user done by admin only route are protected"},
 {"/api/login/admin": "for admin"},
 {"/api/login/normal": "normal user"},
 {"/api/register/admin": "nee password for register as admin"},
