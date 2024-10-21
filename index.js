@@ -26,9 +26,9 @@ app.get('/',async(req,res)=>{
 {"/api/login/admin": "for admin"},
 {"/api/login/normal": "normal user"},
 {"/api/register/admin": "nee password for register as admin"},
-{"/api/register/normal":"Register as normal user"},
+{"/api/register/normal": "Register as normal user"},
 {"put request at .api/register/":"request to pass req.body.isAdmin"},
-{"delete /api/register/id":"pass id as parameter"},
+{"delete /api/register/id": "pass id as parameter"},
 {"the screenshot of testing of API are attach my GitHub repository":"pls have a look"},
 {githubLink}])
 });
