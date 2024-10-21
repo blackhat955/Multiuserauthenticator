@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - index.js
+      - package.json  # Ensure this triggers on changes to package.json
   release:
     types: [created]
 
@@ -15,20 +16,25 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        
+        with:
+          fetch-depth: 0  # Fetch all history
+
       - name: Print working directory
         run: pwd
 
-      - name: List files
+      - name: List files in the root directory
+        run: ls -la
+
+      - name: List files recursively
         run: ls -R
-        
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
         
       - name: Install dependencies
-        run: npm install
+        run: npm install  # Should run at the root level where package.json is
 
   publish-gpr:
     needs: build
@@ -44,9 +50,9 @@ jobs:
           registry-url: https://npm.pkg.github.com/
         
       - name: Install dependencies
-        run: npm install
+        run: npm install  # Should run at the root level where package.json is
         
       - name: Publish package
-        run: npm publish
+        run: npm publish  # Should run at the root level where package.json is
         env:
           NODE_AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN }} 
