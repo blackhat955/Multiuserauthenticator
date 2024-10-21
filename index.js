@@ -19,17 +19,17 @@ useFindAndModify:false
 const githubLink='https://github.com/blackhat955/internship_task_project_new';
 app.get('/',async(req,res)=>{
     res.send([{Info:"welcome to API Information page", },
-     { "/api/register":"register User and admin with  different privilege admin need to admin password for register"},
+     { "/api/register":"Register User and admin with  different privilege admin need to admin password for register"},
 {"/api/login":"admin log using only through token and normal user need to send req.body having userId and password"},
-{"/api/register":"register User and admin with different privilege admin need to admin password for register"},
+{"/api/register":"Register User and admin with different privilege admin need to admin password for register"},
 {"modification":"update and delete the user done by admin only route are protected"},
-{"/api/login/admin":"for admin"},
-{"/api/login/normal":"normal user"},
+{"/api/login/admin": "for admin"},
+{"/api/login/normal": "normal user"},
 {"/api/register/admin":"nee password for register as admin"},
-{"/api/register/normal":"register as normal user"},
-{"put request at .api/register/":"requset to pass req.body.isAdmin"},
+{"/api/register/normal":"Register as normal user"},
+{"put request at .api/register/":"request to pass req.body.isAdmin"},
 {"delete /api/register/id":"pass id as parameter"},
-{"the screenshot of testing of api are attach my github respository":"pls have a look"},
+{"the screenshot of testing of API are attach my GitHub repository":"pls have a look"},
 {githubLink}])
 });
 app.use('/api/register',register);
