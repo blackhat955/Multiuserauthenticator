@@ -21,20 +21,24 @@ jobs:
 
       - name: Print working directory
         run: pwd
+      - name: Print working directory and list files
+        run: |
+          echo "Current Directory: $(pwd)"
+          echo "Contents:"
+          ls -la
+
 
       - name: List files in the root directory
         run: ls -la
-
-      - name: List files recursively
-        run: ls -R
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
-        
+
       - name: Install dependencies
-        run: npm install  # Should run at the root level where package.json is
+        run: npm install
+        working-directory: /home/runner/work/Multiuserauthenticator/Multiuserauthenticator  # Set to the correct path
 
   publish-gpr:
     needs: build
@@ -48,11 +52,13 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-        
+
       - name: Install dependencies
-        run: npm install  # Should run at the root level where package.json is
-        
+        run: npm install
+        working-directory: /home/runner/work/Multiuserauthenticator/Multiuserauthenticator  # Set to the correct path
+
       - name: Publish package
-        run: npm publish  # Should run at the root level where package.json is
+        run: npm publish
+        working-directory: /home/runner/work/Multiuserauthenticator/Multiuserauthenticator  # Set to the correct path
         env:
           NODE_AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN }} 
