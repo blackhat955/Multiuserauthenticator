@@ -25,7 +25,7 @@ app.get('/',async(req,res)=>{
 {"modification":"update and delete the user done by admin only route are protected"},
 {"/api/login/admin": "for admin"},
 {"/api/login/normal": "normal user"},
-{"/api/register/admin":"nee password for register as admin"},
+{"/api/register/admin": "nee password for register as admin"},
 {"/api/register/normal":"Register as normal user"},
 {"put request at .api/register/":"request to pass req.body.isAdmin"},
 {"delete /api/register/id":"pass id as parameter"},
