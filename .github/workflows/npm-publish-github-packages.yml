@@ -15,29 +15,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Fetch all history
-
+        
       - name: Print working directory
         run: pwd
 
-      - name: List files in the root directory
-        run: ls -la
-
-      - name: List files recursively
+      - name: List files
         run: ls -R
-
+        
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
         
-      - name: Navigate to the project directory
-        run: cd internship_assignment_node_project  # Navigate to the correct directory
-        
       - name: Install dependencies
         run: npm install
-        working-directory: internship_assignment_node_project  # Set the working directory for npm install
 
   publish-gpr:
     needs: build
@@ -54,10 +45,8 @@ jobs:
         
       - name: Install dependencies
         run: npm install
-        working-directory: internship_assignment_node_project  # Set the working directory for npm install
         
       - name: Publish package
         run: npm publish
-        working-directory: internship_assignment_node_project  # Set the working directory for npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN }} 
