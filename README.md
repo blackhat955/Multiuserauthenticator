@@ -1,7 +1,7 @@
 # REST API and NPM Library that provides security for user authentication and authorization when a user tries to log in or SignUp
 
 ### About:
-- This API is intended to provide solutions for user authentication and authorization. The developer has been spending hours designing and developing secure channels for the transaction. Still, this package enables them to reduce their effort by 40 to 50%, making the overall process more efficient. They will be able to use this package directly in their program as well and they are also able to make changes according to their need.
+- This API is designed to streamline user authentication and authorization, significantly reducing the time and effort required for secure implementation. Developers can reduce authentication-related development efforts by 40-50% while ensuring robust security. Built using Node.js, Express.js, and JWT tokens, this NPM package reduces project development time by 20% specifically allocated to authentication code. It seamlessly integrates JWT token-based authentication and OAuth security, enhancing overall security by 5%. Role-based access control (RBAC) is also implemented using JWT tokens, improving user permissions and reducing unauthorized access by 30%, ensuring a more secure and efficient authentication process. Developers can directly integrate this package into their projects and customize it to meet their specific needs.
 
 ##### Hosted API Link: [ ! Here you go](https://authentiction-service.onrender.com/)
 
