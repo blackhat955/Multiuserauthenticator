@@ -16,7 +16,7 @@ Initialize the authenticator with your configuration:
 
 ```javascript
 const express = require('express');
-const { setup, registrationRouter, loginRouter, authenticationMiddleware } = require('multiuser-authenticator');
+const { setup, registrationRouter, loginRouter, authenticationMiddleware } = require('multiuserauthenticator');
 
 const app = express();
 
