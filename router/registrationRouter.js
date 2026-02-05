@@ -6,7 +6,8 @@ const validate=require('../middleware/validateUserBaseOnToken');
 const admin=require('../middleware/admin');
 const _=require('lodash');
 const jwt=require('jsonwebtoken');
-const config=require('config');
+const { getConfig } = require('../lib/config');
+const limiter = require('../middleware/limiter');
 const router=express.Router();
 
 router.get('/:id',async(req,res)=>{
@@ -21,7 +22,7 @@ router.get('/',async(req,res)=>{
 
 //this is protect only admin with valid password will register
 
-router.post('/admin',admin,async(req,res)=>{
+router.post('/admin', limiter, admin,async(req,res)=>{
     const {error}=validateUser(req.body);
     if(error) return res.status(400).send('Value enter by you may be not valid try again......');
     let userInfo=await Customer.findOne({email:req.body.email});
@@ -39,7 +40,7 @@ router.post('/admin',admin,async(req,res)=>{
     customer.password=await Bcryptjs.hash( customer.password,salt);
     customer.SecurityQuestion=await Bcryptjs.hash( customer.SecurityQuestion,salt);
     customer.SecurityAns=await Bcryptjs.hash( customer.SecurityAns,salt);
-    const token=jwt.sign({_id:customer._id,email:customer.email,password:passwordSend,isAdmin:customer.isAdmin},config.get('internshiprProjectPrivateKey'));
+    const token=jwt.sign({_id:customer._id,email:customer.email,password:passwordSend,isAdmin:customer.isAdmin},getConfig().jwtPrivateKey);
     // customer.Token=token;
     let value=`You are successfully register As admin and Boolean Result is:${customer.isAdmin}`
     const result=await customer.save();
@@ -49,7 +50,7 @@ router.post('/admin',admin,async(req,res)=>{
 
 // register as without admin password you are now normal user and with limited access
 
-;router.post('/normal',async(req,res)=>{
+router.post('/normal', limiter, async(req,res)=>{
     const {error}=validateUser(req.body);
     if(error) return res.status(400).send('Value enter by you may be not valid try again......');
     let userInfo=await Customer.findOne({email:req.body.email});
@@ -66,7 +67,7 @@ router.post('/admin',admin,async(req,res)=>{
     customer.password=await Bcryptjs.hash( customer.password,salt);
     customer.SecurityQuestion=await Bcryptjs.hash( customer.SecurityQuestion,salt);
     customer.SecurityAns=await Bcryptjs.hash( customer.SecurityAns,salt);
-    const token=jwt.sign({_id:customer._id,email:customer.email,password:passwordSend},config.get('internshiprProjectPrivateKey'));
+    const token=jwt.sign({_id:customer._id,email:customer.email,password:passwordSend},getConfig().jwtPrivateKey);
     // customer.Token=token;
     let value=`You are successfully register As normal User and Boolean Result is:${customer.isAdmin}`
     const result=await customer.save();

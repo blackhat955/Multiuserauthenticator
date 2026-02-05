@@ -1,0 +1,8 @@
+config/
+intership_assingment_image_of_testing_api/
+error.log
+uncaughtException
+.vscode/
+.github/
+Procfile
+err

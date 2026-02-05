@@ -20,7 +20,9 @@ const User=mongoose.model('User',new mongoose.Schema({
         type:Boolean,
         default:false
     },
-    adminTokenAfterLogin:String
+    adminTokenAfterLogin:String,
+    resetPasswordToken: String,
+    resetPasswordExpires: Date
 }));
 function validateUser({name,email,password}){
     const schema=Joi.object({
