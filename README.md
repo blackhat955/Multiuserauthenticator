@@ -5,7 +5,7 @@ This API is designed to streamline user authentication and authorization, signif
 ## Installation
 
 ```bash
-npm install multiuser-authenticator
+npm install multiuserauthenticator
 ```
 
 ## Usage
